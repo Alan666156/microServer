@@ -1,0 +1,16 @@
+server:
+  port: 3333
+  
+spring:
+  application:
+    name: eureka-server
+logging:
+  config: classpath:log4j2.xml
+eureka:
+  instance:
+    instanceId: ${spring.application.name}:${random.int}
+    hostname: 127.0.0.1
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:3333/eureka/
